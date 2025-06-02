@@ -1,0 +1,14 @@
+**/Images
+*.png
+elsarticle*
+*.pdf
+**/doc
+*.synctex.gz
+*.spl
+*.log
+*.fls
+*.bbl
+*.aux
+*.fdb_latexmk
+*.blg
+*.nlo
