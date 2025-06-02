@@ -1,0 +1,49 @@
+\documentclass{report}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{pdfpages}
+\usepackage{nomencl}
+
+%% Page de Garde
+\usepackage[top=1.5cm,bottom=2cm,left=2.5cm,right=2.5cm,includehead]{geometry}
+\usepackage[T1]{fontenc}% pour la sortie
+\usepackage[utf8]{inputenc} % pour l'entrée
+\usepackage{graphicx}
+\usepackage{setspace}
+\usepackage{amsmath} 
+\usepackage{amssymb}
+
+%% This code creates the Nomenclatures groups
+% -----------------------------------------
+\usepackage{etoolbox}
+\renewcommand\nomgroup[1]{%
+  \item[\bfseries
+  \ifstrequal{#1}{P}{Physical Model}{%
+  \ifstrequal{#1}{R}{Registration}{%
+  \ifstrequal{#1}{F}{FE Discretization}{}}}%
+]}
+% -----------------------------------------
+
+
+\title{Non linear Data Interpolation for Reduced Order Models}
+\author{Jon Labatut }
+\date{Jully 2025}
+
+\makenomenclature
+
+\begin{document}
+
+\include{page_garde}
+
+\maketitle
+
+\tableofcontents
+
+\include{nomenclature}
+
+
+\include{ch-Introduction}
+
+\bibliographystyle{ieeetr}
+\bibliography{reference}
+
+\end{document}

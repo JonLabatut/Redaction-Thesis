@@ -1,0 +1,46 @@
+\chapter{Introduction}
+
+
+
+\section{The importance \& limitations of reduced order models}
+
+\section{Image Registration}
+
+Image registration is a field of research that arise from computer vision for a wide variety of applications such as medicine, weather forecasting or geographic information system. The goal of this research is to overlay two images thanks to a deformation plan. In the literature, we refer to the source image $I_0$ to designate the image that we will modify, and the target image $I_1$ as what the source image should look like after deformation. The images $I_0$ and $I_1$ are functions defined on their respective domains $\Omega_0$ and $\Omega_1$. For instance, most of image registration methods are defined for grey scale images : $I \in C^0(\Omega, [0, 1])$. But the methods are extended to vector or even tensor valued functions. 
+
+To modify the source image, we will apply a deformation plan through a mapping function $\phi$ so that $I_0 \circ \phi$ should be close to the target function. The function $\phi$ we are looking for typically lies in an infinite dimensional vector space, which justifies the need for a proper parametrization of the deformation plan. At this point, image registration can be split into two sub groups namely the rigid registration and the non-rigid or deformable registration. 
+
+Traditionally, image registration methods can be split into four main operations \cite{Zitova2003}:
+\begin{itemize}
+    \item Feature detection : this step occurs in landmark matching with is a sub group of image registration. The goal is to extract some geometrical features common in both images. It can be some control points, some lines or contours. 
+    \item Feature matching : a correspondence is achieved between the landmarks to compare appropriately the images. This will be used to define a metric on the alignment of the two images. 
+    \item  Transform model estimation : the parameters for the transformation are set based on the alignment metric of the two images. 
+    \item Image deformation : application of the solution mapping to the source image. 
+\end{itemize}
+
+These steps are traditional in the rigid based registration as the model estimation can be computed simply from the landmarks. In those case, the parametrization of the mapping is simple enough (only a few parameters) that a solution can be found from aligning some landmarks. But in the general case of non rigid deformation. 
+
+
+\subsection{Deformable Registration}
+
+This is the general case of possible mapping. In this case the mapping function will take the general form of
+
+\begin{equation}
+    \phi(x) = x + u(x)
+\end{equation}
+
+Where $u$ refers to a displacement field defined on the source domain $\Omega_S$.  The difficulty is to choose a parametrization for the mapping as now we are looking for a function in infinite dimension. This type of registration falls into the discretization theory and is all about defining suited function spaces to solve our problem. 
+
+To find the mapping function $\phi$ we now have to define a minimization problem:
+
+\begin{equation}
+    \min_\phi E_1(\phi) = M(I_0 \circ \phi, I_1)
+\end{equation}
+
+\section{The LDDMM}
+
+\subsection{Definition and properties}
+
+\subsection{Some trends to accelerate its convergence}
+
+

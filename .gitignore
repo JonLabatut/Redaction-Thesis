@@ -1,6 +1,6 @@
-**/Images
-*.png
-elsarticle*
+#**/Images
+#*.png
+
 *.pdf
 **/doc
 *.synctex.gz
@@ -12,3 +12,7 @@ elsarticle*
 *.fdb_latexmk
 *.blg
 *.nlo
+*.ilg
+*.nls
+*.toc
+**/cache*
